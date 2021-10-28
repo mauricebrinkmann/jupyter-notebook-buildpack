@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Cloud Foundry Jupyter Notebook Buildpack
+# Copyright (c) 2021 MauriceBrinkmann
+#
+# Licensed under the Apache License 2.0
+#
+
+echo "
+default_process_types:
+  web: jupyter notebook --no-browser --no-mathjax --ip=* --port \$PORT
+"
