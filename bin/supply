@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "-----> Setting jupyter-notebook deps to work with the native python buildpack"
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+# hacking all into the build dir
+
+echo "            setup deps"
+echo "jupyterlab" >> $BUILD_DIR/requirements.txt
+echo "pandas" >> $BUILD_DIR/requirements.txt
+echo "openpyxl" >> $BUILD_DIR/requirements.txt
+echo "matplotlib" >> $BUILD_DIR/requirements.txt
+
+echo "            define web process"
+echo 'web: jupyter notebook --no-browser --no-mathjax --ip=* --port $PORT' > $BUILD_DIR/Procfile
+
+echo "            set runtime"
+echo 'python-3.7.x' > $BUILD_DIR/runtime.txt
+
+echo "        DONE =)"
