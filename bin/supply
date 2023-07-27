@@ -9,7 +9,7 @@ ENV_DIR=$3
 # hacking all into the build dir
 
 echo "        deps"
-echo "jupyterlab" >> $BUILD_DIR/requirements.txt
+echo "jupyter" >> $BUILD_DIR/requirements.txt
 echo "pandas" >> $BUILD_DIR/requirements.txt
 echo "openpyxl" >> $BUILD_DIR/requirements.txt
 echo "matplotlib" >> $BUILD_DIR/requirements.txt
