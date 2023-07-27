@@ -60,4 +60,6 @@ fi
 #echo "-----> Changing hardcoded paths..."
 grep -rlI $ROOT . | xargs sed -i.bak "s|$ROOT|.|g"
 
+echo "python-3.6.x" > $ROOT/runtime.txt
+
 echo "-----> Finished compile step"
